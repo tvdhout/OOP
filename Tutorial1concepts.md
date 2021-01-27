@@ -155,4 +155,4 @@ ____
 
 ## Exception handling
 
-If anything goed wrong in your code, it will "throw" an "exception". What that means it the piece of code that fails will stop your program and give an error message. Excpetions can be _caught_, to ensure your program can continue after an excpetion is throws. For now, this is not needed. You can assume all user input is exectly how it is supposed to be (e.g. that the user will actually give an integer response when asked for a stundent number). 
+If anything goes wrong in your code, it will "throw" an "exception". What that means is that the piece of code that fails will stop your program and give an error message. Excpetions can be _caught_ to ensure your program can continue after an excpetion is thrown. For now, this is not needed. You can assume all user input is exectly how it is supposed to be (e.g. that the user will actually give an integer response when asked for a stundent number). 
