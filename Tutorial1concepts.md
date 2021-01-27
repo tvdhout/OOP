@@ -1,6 +1,7 @@
 # Tutorial 1 java concepts
 
 [Link to tutorial lecture on youtube](https://www.youtube.com/watch?v=aZFG6jy6OsE&list=PLYAJmxblYnQOzL98qTMwYgqlQhYXSim_l&index=1)
+
 [Link to tutorial slides on Brightspace](https://brightspace.ru.nl/d2l/le/content/163566/viewContent/1098070/View)
 
 _____
