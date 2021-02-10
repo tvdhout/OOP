@@ -45,11 +45,11 @@ The shelter has room for 50 furry companions, so the above defined array sizes k
 ```java
 interface Animal {
     void makeNoise();
-    String toString();
+    String niceString();
 }
 ```
 
-The interface `Animal` tells us that every class that wants to implement this _must_ define the methods `public String toString()` and `public void makeNoise()`. Knowing that _all_ classes that implement this interface are sure to have implemented those methods allows us to think of all animals in terms of those methods. Some code will clarify this:
+The interface `Animal` tells us that every class that wants to implement this _must_ define the methods `public String niceString()` and `public void makeNoise()`. Knowing that _all_ classes that implement this interface are sure to have implemented those methods allows us to think of all animals in terms of those methods. Some code will clarify this:
 First, let the classes `Dog` and `Cat` "implement" the `Animal` interface:
 ```java
 public class Cat implements Animal{
@@ -63,7 +63,7 @@ public class Cat implements Animal{
         System.out.println("Meow!");
     }
     
-    public String toString(){
+    public String niceString(){
         return name + " the cat";
     }
 }
@@ -79,12 +79,12 @@ public class Dog implements Animal{
         System.out.println("Woof!");
     }
     
-    public String toString(){
+    public String niceString(){
         return name + " the dog";
     }
 }
 ```
-Note that we now _have to_ implement the `toString` method in `Cat` and `Dog`, because the interface says so. If we didn't implement it, the code wouldn't even compile.
+Note that we now _have to_ implement the `niceString` method in `Cat` and `Dog`, because the interface says so. If we didn't implement it, the code wouldn't even compile.
 
 It's important to understand that it's illegal to create an instance of an interface directly, like so:
 ```java
@@ -104,7 +104,7 @@ As you see, the type of `animals` is an array of `Animal`s. This means that inst
 What we lose by doing this are the details of the specific classes. We know that the elements in the `Animal` array are animals, but which type of animal we don't know. This means we can only interact with these objects using the methods defined in the interface, since we know that all objects that are an `Animal` will for sure have implemented these methods. Image the class `Dog` has another method `public void fetch();`, what we _can't_ do is `animals[0].fetch()` because we don't know that that element is a dog (even though we explicitly added a dog to the array). It's an `Animal[]`, so all we know is that it's an animal. That means we _can_ do `animal[0].makeNoise();` because `void makeNoise()` is defined in the interface, therefore all animals are able to do it. 
 ```java
 for(Animal a : animals){
-    System.out.print(a);
+    System.out.print(a.niceString());
     System.out.print(" says: ");
     a.makeNoise();
 }
@@ -137,7 +137,7 @@ For this to work, both `Plant`s as `Animal`s should be recognized as `Organism`s
 ```java
 interface Animal extends Organism{
     void makeNoise();
-    String toString();
+    String niceString();
 }
 
 interface Plant extends Organism { ... }
