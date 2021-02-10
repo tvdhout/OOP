@@ -111,8 +111,8 @@ for(Animal a : animals){
 ```
 will print:
 ```
-A dog named Kliko says: Woof!
-A cat named Lucifer says: Meow!
+Kliko the dog says: Woof!
+Lucifer the cat says: Meow!
 ```
 
 ## Interfaces as part of a hierarchy <sub><sup>(📖⏳ 2.5 minutes)</sup></sub>
