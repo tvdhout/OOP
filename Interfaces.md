@@ -40,7 +40,7 @@ Dog[] dogs = new Dog[25];
 Cat[] cats = new Cat[25];
 ```
 
-The shelter has room for 50 furry companions, so the above defined array sizes kind of make sense. But what if at some point there are 30 cats and 5 dogs? or 45 dogs and 1 cat? Trouble. Since the overflow of `Dog` instances don't fit in the `Cat[] cats`; only cats can be in that array. We also can't create a class `Animal`, because dogs and cats make a different noise; by using a class `Animal` we need to make the concession of not knowing if it's a cat or a dog. This is a good use case for abstraction. We will abstract the types `Cat` and `Dog` into the more general type: `Animal` using an interface. In this interface we have to define the common methods between all the things that will _implement_ this interface.
+The shelter has room for 50 furry companions, so the above defined array sizes kind of make sense. But what if at some point there are 30 cats and 5 dogs? or 45 dogs and 1 cat? Trouble. Since the overflow of `Dog` instances don't fit in the `Cat[] cats`; only cats can be in that array. We also can't create a single class `Animal` to replace `Dog` and `Cat`, because dogs and cats make a different noise; by using a class `Animal` we need to make the concession of not knowing if it's a cat or a dog. This is a good use case for abstraction. We will abstract the types `Cat` and `Dog` into the more general type: `Animal` using an interface. In this interface we have to define the common methods between all the things that will _implement_ this interface.
 #### The interface
 ```java
 interface Animal {
