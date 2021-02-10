@@ -115,6 +115,21 @@ Kliko the dog says: Woof!
 Lucifer the cat says: Meow!
 ```
 
+#### Default methods
+Interfaces can also contain default methods: methods that are implemented in the interface itself as a default for all implementing classes. The implementing classes don't _have_ to implement default methods from the interface, but they _can_. If they do, they override the default implementation. Note that default methods cannot make use of any attributes of the implementing classes, since interfaces can't define attributes. The interface doesn't know about any attributes its implementing classes may have defined. As example, let's create a default method `void excitedNoise()`, which simply lets the animal make a noise three times in a row:
+```java
+interface Animal {
+    void makeNoise();
+    String niceString();
+    default void excitedNoise(){
+        makeNoise(); 
+        makeNoise(); 
+        makeNoise();
+    }
+}
+```
+Simple as that!
+
 ## Interfaces as part of a hierarchy <sub><sup>(📖⏳ 2.5 minutes)</sup></sub>
 But abstraction doesn't end there! What if we have the program we just made, introducing the interface `Animal`, as well as another interface `Plant`, which has a whole bunch of classes implementing _it_. Both animals and plants are organisms... see where this is going? Let's do it!
 ```java
